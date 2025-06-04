@@ -55,7 +55,7 @@ App.css - Main stylesheet for ReachFit React website
   top: 0;
   z-index: 100;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   background: linear-gradient(90deg, #ff512f 0%, #f9d423 100%);
   padding: 1rem 2rem;
@@ -72,6 +72,7 @@ App.css - Main stylesheet for ReachFit React website
   font-weight: bold;
   color: #fff;
   letter-spacing: 2px;
+  margin-right: 48rem !important; /* Force override any inline or conflicting style */
 }
 .nav-links {
   list-style: none;
