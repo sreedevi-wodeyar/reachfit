@@ -648,6 +648,39 @@ button:hover, .btn:hover {
   .hero-title {
     font-size: 2rem;
   }
+  .trainer-photo-col {
+    position: static !important;
+    left: unset !important;
+    top: unset !important;
+    transform: none !important;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    z-index: 2;
+  }
+  .home-hero-photo-box {
+    margin: 0 auto;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+    border-radius: 50%;
+    max-width: 160px;
+    max-height: 160px;
+    overflow: hidden;
+  }
+  .home-hero-photo-img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    filter: brightness(1.05) contrast(1.08);
+  }
+  .home-hero-text {
+    margin-left: 0 !important;
+    align-items: center !important;
+    text-align: center;
+  }
+  .home-hero {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* Floating WhatsApp button */
