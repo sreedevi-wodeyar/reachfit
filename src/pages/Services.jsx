@@ -69,13 +69,13 @@ function Services() {
       {/* Women's Health Services Section */}
       <div className="services-womens-health">
         <h2>Women's Health Programs</h2>
-        <ul>
-          <li>Personalized fitness for hormonal balance and reproductive health</li>
-          <li>Safe postnatal and Diastasis Recti recovery</li>
-          <li>PCOD/PCOS management through exercise and nutrition</li>
-          <li>Support for irregular periods, fertility, and thyroid wellness</li>
-          <li>Back pain relief and posture correction</li>
-        </ul>
+        <div className="service-benefits-list" style={{ marginTop: '0', paddingTop: '0' }}>
+          Personalized fitness for hormonal balance and reproductive health<br />
+          Safe postnatal and Diastasis Recti recovery<br />
+          PCOD/PCOS management through exercise and nutrition<br />
+          Support for irregular periods, fertility, and thyroid wellness<br />
+          Back pain relief and posture correction
+        </div>
         <p>
           Every program is designed with compassion and expertise to help women overcome unique health challenges and achieve lasting results.
         </p>

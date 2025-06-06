@@ -38,6 +38,30 @@ const defaultTestimonials = [
   },
 ];
 
+// Home page testimonials to display in the slider
+const homeTestimonials = [
+  {
+    message: '“ReachFit helped me lose inches off my belly so soon. The support and motivation are unmatched!”',
+    author: '— Krupa.'
+  },
+  {
+    message: '“Backpain relief has been incredible. I can finally move without discomfort!”',
+    author: '— Veena.'
+  },
+  {
+    message: '“Menstrual cycle started regularizing once I started my workouts with Reachfit. Recommend this to all ladies facing irregular periods”',
+    author: '— Sahana.'
+  },
+  {
+    message: '“The group classes are so effective and relaxing. I love the energy and the results!”',
+    author: '— Nithu.'
+  },
+  {
+    message: '“Finally started loosing weight in the pre-menopausal age from the very 1st month of joining. Highly recommend!”',
+    author: '— Deepti.'
+  }
+];
+
 function getAllFeedbacks() {
   let feedbacks = [];
   try {
@@ -123,14 +147,14 @@ function Gallery() {
           </div>
         </div>
       )}
-      {/* Testimonials section for client feedback */}
-      <div className="testimonials-section">
-        <h2 className="testimonials-title gradient-text">What Our Clients Say</h2>
+      {/* Gallery Testimonials component */}
+      <div className="gallery-testimonials-section">
+        <h2 className="testimonials-title">What Our Clients Say</h2>
         <div className="testimonials-list">
-          {top8.map((t, idx) => (
-            <div className="testimonial-card" key={idx}>
-              <p className="testimonial-quote">“{t.feedback || t.quote}”</p>
-              <span className="testimonial-author">- {t.name || t.author}</span>
+          {homeTestimonials.map((t, i) => (
+            <div className="testimonial-card" key={i}>
+              <p className="testimonial-quote">{t.message}</p>
+              <span className="testimonial-author">{t.author}</span>
             </div>
           ))}
         </div>

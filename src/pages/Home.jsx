@@ -1,19 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import trainer1 from '../assets/trainer1.jpeg';
 
 // Home page testimonials to display in the slider
 const homeTestimonials = [
   {
-    message: '“ReachFit helped me lose 15kg and feel confident again. The support and motivation are unmatched!”',
-    author: '— Priya S.'
+    message: '“ReachFit helped me lose inches off my belly so soon. The support and motivation are unmatched!”',
+    author: '— Krupa.'
+  },
+    {
+    message: '“Backpain relief has been incredible. I can finally move without discomfort!”',
+    author: '— Veena.'
+  },
+    {
+    message: '“Menstrual cycle started regularizing once I started my workouts with Reachfit. Recommend this to all ladies facing irregular periods”',
+    author: '— Sahana.'
   },
   {
-    message: '“The group classes are so much fun and effective. I love the energy and the results!”',
-    author: '— Rahul M.'
+    message: '“The group classes are so effective and relaxing. I love the energy and the results!”',
+    author: '— Nithu.'
   },
   {
-    message: '“Personalized nutrition and training plans made all the difference. Highly recommend!”',
-    author: '— Sneha K.'
+    message: '“Finally started loosing weight in the pre-menopausal age from the very 1st month of joining. Highly recommend!”',
+    author: '— Deepti.'
   }
 ];
 
@@ -70,7 +79,7 @@ function Home() {
   return (
     <section className="page home fancy-home">
       {/* Hero section with layered gradients, animated shapes, and parallax */}
-      <div className="home-hero home-hero-bg" style={{ marginTop: 0, paddingTop: 0 }}>
+      <div className="home-hero home-hero-bg" style={{ marginTop: 0, paddingTop: 0, maxWidth: '1220px', marginLeft: 'auto', marginRight: 'auto', position: 'relative' }}>
         {/* <div className="hero-bg-img" style={{ backgroundImage: `url(${ReachFitImg})` }} /> */}
         <div className="hero-gradient" />
         <div className="hero-shapes">
@@ -78,34 +87,47 @@ function Home() {
           <span className="shape shape2" />
           <span className="shape shape3" />
         </div>
-        <div className="home-hero-text">
-          <h1 className="home-title">ReachFit</h1>
-          <h2 className="home-midtagline">Your destination to fitness</h2>
-          <h2 className="home-tagline">Unleash Your Best Self</h2>
-          <p className="home-desc">
-            Get Toned Up like in your 20s…
-            <br />Get Ready to Shape-up to the best version of yourself
-            <br />Get Stronger and Healthier Inside Out
-            <br />Everything At the convenience of your homes!"
-          </p>
-          {/* Benefits moved into Hero Section */}
-          <div className="home-benefits-section hero-benefits">
-            <h3 className="benefits-title">Benefits</h3>
-            <ul className="benefits-list">
-              <li>Shrink Fibroids</li>
-              <li>Heal Endometriosis</li>
-              <li>Heal Diastasis Recti</li>
-              <li>Heal PCOD/PCOS</li>
-              <li>Regularise the Irregular Periods</li>
-              <li>Heal Hormonal Imbalance</li>
-              <li>Improve Fertility</li>
-              <li>Heal Thyroid issues</li>
-              <li>Back Pain</li>
-              <li>Lumbar Spine Posture Issues</li>
-              <li>Ease Perimenopausal and Premenopausal symptoms</li>
-            </ul>
+        <div style={{ position: 'relative', width: '100%' }}>
+          {/* Trainer photo between center top and right top of hero section */}
+          <div className="trainer-photo-col" style={{ position: 'absolute', left: '80%', top: '-2.5rem', transform: 'translateX(-50%)', zIndex: 2 }}>
+            <div className="home-hero-photo-box">
+              <img src={trainer1} alt="Trainer" className="home-hero-photo-img" />
+            </div>
           </div>
-          <Link to="/contact" className="home-cta-btn">Get Started</Link>
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', width: '100%' }}>
+            <div className="home-hero-text" style={{ alignItems: 'flex-start', marginTop: '-1.2rem', marginLeft: '1.5rem', flex: 1 }}>
+              <h1 className="home-title">ReachFit</h1>
+              <h2 className="home-midtagline">Your destination to fitness</h2>
+              <h2 className="home-tagline">Unleash Your Best Self</h2>
+              <p className="home-desc" style={{ marginTop: '0.2rem' }}>
+                Get Toned Up like in your 20s…
+                <br />Get Ready to Shape-up to the best version of yourself
+                <br />Get Stronger and Healthier Inside Out
+                <br />Everything At the convenience of your homes!"
+              </p>
+              {/* Benefits moved into Hero Section */}
+              <div className="home-benefits-section hero-benefits" style={{ marginTop: '-1.2rem' }}>
+                <h3 className="benefits-title" style={{ marginBottom: '0.1rem' }}>Benefits</h3>
+                <ul className="benefits-list" style={{ marginTop: '0', paddingTop: '0' }}>
+                  <li>Slim Your Waist</li>
+                  <li>Shrink Uterus and Breast Fibroids</li>
+                  <li>Heal Endometriosis</li>
+                  <li>Heal Diastasis Recti</li>
+                  <li>Heal PCOD/PCOS</li>
+                  <li>Regularise the Irregular Periods</li>
+                  <li>Heal Hormonal Imbalance</li>
+                  <li>Improve Fertility</li>
+                  <li>Heal Thyroid issues</li>
+                  <li>Heal Back Pain</li>
+                  <li>Correct the Lumbar Spine Posture Issues</li>
+                  <li>Ease Perimenopausal and Premenopausal symptoms</li>
+                </ul>
+              </div>
+              <div style={{ height: '1.2rem' }} />
+              <Link to="/contact" className="home-cta-btn blinker" style={{ marginTop: '-0.8rem', display: 'inline-block' }}>Get Started</Link>
+              <br />
+            </div>
+          </div>
         </div>
       </div>
       {/* Animated scroller for services offered (infinite, smooth) */}
@@ -163,25 +185,8 @@ function Home() {
       <div className="home-testimonials-section merged-with-hero" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <h2 className="testimonials-title">What Our Clients Say</h2>
         <TestimonialSlider />
-        <a href="/feedback" className="see-more-link">See more & leave your feedback</a>
+        <Link to="/feedback" className="see-more-link">See more & leave your feedback</Link>
       </div>
-      {/* Benefits Section */}
-      {/* <div className="home-benefits-section">
-        <h2 className="benefits-title">Benefits</h2>
-        <ul className="benefits-list">
-          <li>Shrink Uterus and Breast Fibroids</li>
-          <li>Heal Endometriosis</li>
-          <li>Heal Diastasis Recti</li>
-          <li>Heal PCOD/PCOS</li>
-          <li>Regularise the Irregular Periods</li>
-          <li>Heal Hormonal Imbalance</li>
-          <li>Improve Fertility</li>
-          <li>Heal Thyroid issues</li>
-          <li>Heal Back Pain</li>
-          <li>Correct the lumbar spinal posture issues</li>
-          <li>Ease Perimenopausal and Premenopausal symptoms</li>
-        </ul>
-      </div> */}
       {/* Home Convenience Section */}
       <div className="home-convenience">
         <p className="home-convenience-text">Get toned up at the convenience of your HOMES.</p>
@@ -189,7 +194,7 @@ function Home() {
       {/* Call-to-action banner at the bottom */}
       <div className="home-banner" id="get-started">
         <h2>Ready to Transform?</h2>
-        <a href="/contact" className="home-banner-btn">Book a Free Consultation</a>
+        <Link to="/contact" className="home-banner-btn">Book a Free Consultation and Free Demo</Link>
       </div>
     </section>
   );
