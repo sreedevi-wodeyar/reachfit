@@ -79,7 +79,7 @@ function Home() {
   return (
     <section className="page home fancy-home">
       {/* Hero section with layered gradients, animated shapes, and parallax */}
-      <div className="home-hero home-hero-bg" style={{ marginTop: 0, paddingTop: 0, maxWidth: '1220px', marginLeft: 'auto', marginRight: 'auto', position: 'relative' }}>
+      <div className="home-hero home-hero-bg" style={{ marginTop: 0, paddingTop: 0, position: 'relative' }}>
         {/* <div className="hero-bg-img" style={{ backgroundImage: `url(${ReachFitImg})` }} /> */}
         <div className="hero-gradient" />
         <div className="hero-shapes">

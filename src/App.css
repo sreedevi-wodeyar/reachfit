@@ -248,6 +248,30 @@ main {
     border-radius: 0.9rem;
   }
 }
+@media (max-width: 700px) {
+  .trainer-photo-col {
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  .home-hero-photo-box {
+    margin: 0 auto;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+    border-radius: 50%;
+    max-width: 160px;
+    max-height: 160px;
+    overflow: hidden;
+    /* Add extra padding at the top to prevent image cut-off */
+    padding-top: 0.5rem;
+  }
+  .home-hero-photo-img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    filter: brightness(1.05) contrast(1.08);
+    object-fit: cover;
+    object-position: center top;
+  }
+}
 
 /* Feature Cards for Home page */
 .features-section {
@@ -1075,5 +1099,19 @@ button:hover, .btn:hover {
     border-color: #ff0080 !important; /* Dazzling pink border */
     box-shadow: 0 0 32px 10px #ff008099, 0 0 18px 4px #fffb0099;
     outline: 4px solid #00ffe7;
+  }
+}
+@media (max-width: 700px) {
+  .home-hero {
+    width: 100vw !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    box-sizing: border-box;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .page.home.fancy-home {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
