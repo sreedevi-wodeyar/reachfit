@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://reachfit.vercel.app/sitemap.xml
