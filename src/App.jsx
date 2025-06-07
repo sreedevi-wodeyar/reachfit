@@ -62,7 +62,6 @@ function Navbar() {
           <NavLink to="/services">Services</NavLink>
           <NavLink to="/gallery">Gallery</NavLink>
           <NavLink to="/contact">Contact</NavLink>
-          <NavLink to="/feedback">Feedback</NavLink>
         </div>
       </nav>
     </header>
