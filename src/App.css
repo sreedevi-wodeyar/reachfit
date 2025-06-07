@@ -158,25 +158,28 @@ App.css - Main stylesheet for ReachFit React website
   background: none !important;
 }
 
-/* Ensure main/page/hero is never overlapped by navbar */
+/* Fix: Remove margin-top and padding-top from main/page/hero to eliminate gap below navbar */
 main, .page, .page.home, .page.home.fancy-home, .home-hero-bg {
-  margin-top: 56px !important;
+  margin-top: 0 !important;
   padding-top: 0 !important;
 }
+
+/* If you want a small gap, use only a few px, not 56px or more */
+.rf-navbar {
+  margin-bottom: 0 !important;
+}
+
 @media (max-width: 900px) {
   main, .page, .page.home, .page.home.fancy-home, .home-hero-bg {
-    margin-top: 52px !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 }
 @media (max-width: 700px) {
   main, .page, .page.home, .page.home.fancy-home, .home-hero-bg {
-    margin-top: 48px !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
-}
-
-/* --- GLOBAL TOP PADDING FOR NAVBAR --- */
-body, #root, main, .page, .page.home, .page.home.fancy-home, .home-hero-bg {
-  padding-top: 56px !important;
 }
 
 /* Home Hero Section styles */
