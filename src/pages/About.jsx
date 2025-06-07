@@ -27,35 +27,29 @@ function About() {
       <p>
         Welcome to ReachFit! I am passionate about helping people transform their lives through fitness, nutrition, and a positive mindset. With years of experience and multiple certifications, I have guided hundreds of clients to achieve their goals—whether it's weight loss, muscle gain, or overall wellness.
       </p>
-      {/* Timeline stepper for journey/certifications */}
-      <div className="about-timeline">
+      {/* Timeline squares */}
+      <div className="about-timeline-grid">
         {timeline.map((item, idx) => (
-          <div className="timeline-step" key={idx}>
+          <div className="about-timeline-card" key={idx}>
             <div className="timeline-year">{item.year}</div>
             <div className="timeline-event">{item.event}</div>
           </div>
         ))}
       </div>
-      {/* Animated skill bars */}
-      <div className="about-skills">
-        {skills.map((skill, idx) => (
-          <div className="skill-bar-wrap" key={idx}>
-            <div className="skill-label">{skill.label}</div>
-            <div className="skill-bar-bg">
-              <div className="skill-bar" style={{ width: skill.percent + '%' }} />
-            </div>
-            <span className="skill-percent">{skill.percent}%</span>
+      {/* Skill squares */}
+      <div className="about-skills-grid">
+        {skills.map((s, idx) => (
+          <div className="about-skill-card" key={idx}>
+            <div className="skill-label">{s.label}</div>
+            <div className="skill-percent">{s.percent}%</div>
           </div>
         ))}
       </div>
-      {/* Fun facts section */}
-      <div className="about-facts">
-        <h3>Did you know?</h3>
-        <ul>
-          <li>ReachFit clients have obtained a lot of benefits!</li>
-          <li>We offer online coaching worldwide.</li>
-          <li>Our community events are open to all fitness levels.</li>
-        </ul>
+      {/* Fun facts squares */}
+      <div className="about-facts-grid">
+        <div className="about-fact-card">ReachFit clients have obtained a lot of benefits!</div>
+        <div className="about-fact-card">We offer online coaching worldwide.</div>
+        <div className="about-fact-card">Our community events are open to all fitness levels.</div>
       </div>
       {/* Women's Health Expertise Section */}
       <div className="about-womens-health">
