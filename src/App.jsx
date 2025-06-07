@@ -50,47 +50,36 @@ function ScrollToTopBtn() {
   ) : null;
 }
 
-// Sticky, animated navigation bar with active link highlighting
+// Simple, modern responsive navigation bar
 function Navbar() {
   const location = useLocation();
-  const [fontSize, setFontSize] = useState('0.8rem');
   const [menuOpen, setMenuOpen] = useState(false);
-  useEffect(() => {
-    const updateFontSize = () => {
-      const rootFont = parseFloat(getComputedStyle(document.documentElement).fontSize);
-      setFontSize(`${rootFont * 0.8}px`);
-    };
-    updateFontSize();
-    window.addEventListener('resize', updateFontSize);
-    return () => window.removeEventListener('resize', updateFontSize);
-  }, []);
   useEffect(() => { setMenuOpen(false); }, [location]);
   return (
-    <nav className="navbar">
-      <NavLink to="/" className="logo">ReachFit</NavLink>
-      <button
-        className={`navbar-hamburger${menuOpen ? ' open' : ''}`}
-        aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-        aria-expanded={menuOpen}
-        aria-controls="navbar-menu"
-        onClick={() => setMenuOpen(m => !m)}
-      >
-        <span className="hamburger-bar" />
-        <span className="hamburger-bar" />
-        <span className="hamburger-bar" />
-      </button>
-      <ul
-        className={`nav-links${menuOpen ? ' nav-open' : ''}`}
-        id="navbar-menu"
-      >
-        <li><NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''} end>Home</NavLink></li>
-        <li><NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink></li>
-        <li><NavLink to="/services" className={({ isActive }) => isActive ? 'active' : ''}>Services</NavLink></li>
-        <li><NavLink to="/gallery" className={({ isActive }) => isActive ? 'active' : ''}>Gallery</NavLink></li>
-        <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink></li>
-        <li><NavLink to="/feedback" className={({ isActive }) => isActive ? 'active' : ''}>Feedback</NavLink></li>
-      </ul>
-    </nav>
+    <header>
+      <nav className="navbar-simple">
+        <NavLink to="/" className="logo">ReachFit</NavLink>
+        <button
+          className={`navbar-hamburger${menuOpen ? ' open' : ''}`}
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={menuOpen}
+          aria-controls="navbar-menu"
+          onClick={() => setMenuOpen(m => !m)}
+        >
+          <span className="hamburger-bar" />
+          <span className="hamburger-bar" />
+          <span className="hamburger-bar" />
+        </button>
+        <ul className={`nav-links-simple${menuOpen ? ' nav-open' : ''}`} id="navbar-menu">
+          <li><NavLink to="/" onClick={() => setMenuOpen(false)} end>Home</NavLink></li>
+          <li><NavLink to="/about" onClick={() => setMenuOpen(false)}>About</NavLink></li>
+          <li><NavLink to="/services" onClick={() => setMenuOpen(false)}>Services</NavLink></li>
+          <li><NavLink to="/gallery" onClick={() => setMenuOpen(false)}>Gallery</NavLink></li>
+          <li><NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink></li>
+          <li><NavLink to="/feedback" onClick={() => setMenuOpen(false)}>Feedback</NavLink></li>
+        </ul>
+      </nav>
+    </header>
   );
 }
 
