@@ -102,7 +102,7 @@ function App() {
     <Router>
       <AnimatedBackground />
       <Navbar />
-      <main>
+      <main style={{ paddingBottom: '64px' }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
