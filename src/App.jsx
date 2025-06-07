@@ -50,34 +50,20 @@ function ScrollToTopBtn() {
   ) : null;
 }
 
-// Simple, modern responsive navigation bar
+// FLEXIBLE, UNIVERSAL NAVBAR (NO HAMBURGER, NO OVERLAP, ALWAYS VISIBLE LINKS)
 function Navbar() {
-  const location = useLocation();
-  const [menuOpen, setMenuOpen] = useState(false);
-  useEffect(() => { setMenuOpen(false); }, [location]);
   return (
     <header>
-      <nav className="navbar-simple">
-        <NavLink to="/" className="logo">ReachFit</NavLink>
-        <button
-          className={`navbar-hamburger${menuOpen ? ' open' : ''}`}
-          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-          aria-expanded={menuOpen}
-          aria-controls="navbar-menu"
-          onClick={() => setMenuOpen(m => !m)}
-        >
-          <span className="hamburger-bar" />
-          <span className="hamburger-bar" />
-          <span className="hamburger-bar" />
-        </button>
-        <ul className={`nav-links-simple${menuOpen ? ' nav-open' : ''}`} id="navbar-menu">
-          <li><NavLink to="/" onClick={() => setMenuOpen(false)} end>Home</NavLink></li>
-          <li><NavLink to="/about" onClick={() => setMenuOpen(false)}>About</NavLink></li>
-          <li><NavLink to="/services" onClick={() => setMenuOpen(false)}>Services</NavLink></li>
-          <li><NavLink to="/gallery" onClick={() => setMenuOpen(false)}>Gallery</NavLink></li>
-          <li><NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink></li>
-          <li><NavLink to="/feedback" onClick={() => setMenuOpen(false)}>Feedback</NavLink></li>
-        </ul>
+      <nav className="rf-navbar">
+        <NavLink to="/" className="rf-logo">ReachFit</NavLink>
+        <div className="rf-nav-links">
+          <NavLink to="/" end>Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/services">Services</NavLink>
+          <NavLink to="/gallery">Gallery</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/feedback">Feedback</NavLink>
+        </div>
       </nav>
     </header>
   );
