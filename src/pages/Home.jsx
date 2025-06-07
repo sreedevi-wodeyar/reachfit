@@ -91,7 +91,7 @@ function Home() {
           {/* Trainer photo between center top and right top of hero section */}
           <div className="trainer-photo-col" style={{ position: 'absolute', left: '80%', top: '-2.5rem', transform: 'translateX(-50%)', zIndex: 2 }}>
             <div className="home-hero-photo-box">
-              <img src={trainer1} alt="Trainer" className="home-hero-photo-img" />
+              <img src={trainer1} alt="ReachFit Trainer, certified women's fitness coach" className="home-hero-photo-img" />
             </div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'flex-start', width: '100%' }}>

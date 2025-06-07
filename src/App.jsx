@@ -53,8 +53,8 @@ function ScrollToTopBtn() {
 // Sticky, animated navigation bar with active link highlighting
 function Navbar() {
   const location = useLocation();
-  // Make logo font size and navbar even smaller
   const [fontSize, setFontSize] = useState('0.8rem');
+  const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
     const updateFontSize = () => {
       const rootFont = parseFloat(getComputedStyle(document.documentElement).fontSize);
@@ -65,10 +65,27 @@ function Navbar() {
     window.addEventListener('resize', updateFontSize);
     return () => window.removeEventListener('resize', updateFontSize);
   }, []);
+  // Close menu on route change
+  useEffect(() => { setMenuOpen(false); }, [location]);
   return (
     <nav className="navbar" style={{ minHeight: '24px', padding: '0.08rem 0.5rem', alignItems: 'center' }}>
       <NavLink to="/" className="logo" style={{ fontSize: '1.1rem', fontWeight: 700, letterSpacing: '1px', padding: 0, color: '#fff', lineHeight: 1, height: 'auto', marginRight: '0.05rem', textDecoration: 'none' }}>ReachFit</NavLink>
-      <ul className="nav-links" style={{ gap: '0.7rem', fontSize: '0.75rem', alignItems: 'center', margin: 0, flexWrap: 'wrap' }}>
+      <button
+        className={`navbar-hamburger${menuOpen ? ' open' : ''}`}
+        aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+        aria-expanded={menuOpen}
+        aria-controls="navbar-menu"
+        onClick={() => setMenuOpen(m => !m)}
+      >
+        <span className="hamburger-bar" />
+        <span className="hamburger-bar" />
+        <span className="hamburger-bar" />
+      </button>
+      <ul
+        className={`nav-links${menuOpen ? ' nav-open' : ''}`}
+        id="navbar-menu"
+        style={{ gap: '0.7rem', fontSize: '0.75rem', alignItems: 'center', margin: 0, flexWrap: 'wrap' }}
+      >
         <li><NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''} end>Home</NavLink></li>
         <li><NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink></li>
         <li><NavLink to="/services" className={({ isActive }) => isActive ? 'active' : ''}>Services</NavLink></li>
