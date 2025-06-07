@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, NavLink, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, NavLink, useLocation, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -22,16 +22,14 @@ function AnimatedBackground() {
 // Floating WhatsApp button (global)
 function FloatingWhatsApp() {
   return (
-    <a
-      href="https://wa.me/919999999999" // Replace with your WhatsApp number
+    <Link
+      to="/contact"
       className="floating-whatsapp"
       aria-label="Contact via WhatsApp"
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{ background: '#25d366', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', width: '60px', height: '60px', boxShadow: '0 4px 24px rgba(37,211,102,0.18)' }}
+      style={{ background: '#25d366', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '50%', width: '60px', height: '60px', boxShadow: '0 4px 24px rgba(37,211,102,0.18)', position: 'fixed', bottom: '24px', right: '24px', zIndex: 3000 }}
     >
       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" style={{ width: '32px', height: '32px' }} />
-    </a>
+    </Link>
   );
 }
 

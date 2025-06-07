@@ -894,6 +894,84 @@ button:hover, .btn:hover {
   }
 }
 
+/* --- SERVICES PAGE: TIMELINE, SKILLS, FACTS SQUARES --- */
+.services-timeline-grid, .services-skills-grid, .services-facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.2rem;
+  margin: 1.5rem 0 1.5rem 0;
+}
+.services-timeline-card, .services-skill-card, .services-fact-card {
+  background: linear-gradient(135deg, #fffbe6 0%, #f9d423 100%);
+  border: 2.5px solid #ff512f;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(255,81,47,0.13);
+  padding: 1.2rem 1rem;
+  font-size: 1.08rem;
+  color: #ff512f;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+  min-width: 0;
+  transition: box-shadow 0.18s, transform 0.18s, background 0.18s;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.services-timeline-card .timeline-year {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ff512f;
+  margin-bottom: 0.3rem;
+}
+.services-timeline-card .timeline-event {
+  font-size: 1.01rem;
+  color: #444;
+}
+.services-skill-card .skill-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ff512f;
+  margin-bottom: 0.2rem;
+}
+.services-skill-card .skill-percent {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #f9d423;
+}
+.services-fact-card {
+  font-size: 1.01rem;
+  color: #444;
+  font-weight: 500;
+  background: linear-gradient(135deg, #fffbe6 0%, #fff5e1 100%);
+}
+.services-timeline-card:hover, .services-skill-card:hover, .services-fact-card:hover {
+  background: linear-gradient(135deg, #ff512f 0%, #f9d423 100%);
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(255,81,47,0.18);
+  transform: translateY(-4px) scale(1.04);
+}
+@media (max-width: 700px) {
+  .services-timeline-grid, .services-skills-grid, .services-facts-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+  }
+  .services-timeline-card, .services-skill-card, .services-fact-card {
+    font-size: 0.98rem;
+    padding: 0.7rem 0.5rem;
+    min-height: 80px;
+  }
+  .services-timeline-card .timeline-year {
+    font-size: 1.1rem;
+  }
+  .services-skill-card .skill-percent {
+    font-size: 1.2rem;
+  }
+}
+
 /* Responsive adjustments for mobile */
 @media (max-width: 900px) {
   .features-section {
