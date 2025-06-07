@@ -169,6 +169,25 @@ main, .page, .page.home, .page.home.fancy-home, .home-hero-bg {
   margin-bottom: 0 !important;
 }
 
+/* Add a small gap below the navbar only for the hero section */
+.rf-navbar {
+  margin-bottom: 0.7rem !important; /* ~11px gap below navbar */
+  border-radius: 1.2rem !important; /* Rounded corners to match hero section */
+  box-shadow: 0 2px 16px rgba(255,81,47,0.12);
+}
+@media (max-width: 700px) {
+  .rf-navbar {
+    border-radius: 0.7rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+/* Remove margin-bottom for all other pages except home hero */
+.page:not(.home) .rf-navbar,
+.page:not(.home) main .rf-navbar {
+  margin-bottom: 0 !important;
+}
+
 @media (max-width: 900px) {
   main, .page, .page.home, .page.home.fancy-home, .home-hero-bg {
     margin-top: 0 !important;
