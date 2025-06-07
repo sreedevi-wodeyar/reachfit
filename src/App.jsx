@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, NavLink, useLocation, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, NavLink, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -114,34 +114,7 @@ function App() {
       </main>
       <FloatingWhatsApp />
       <ScrollToTopBtn />
-      {/* Bottom navigation links for mobile */}
-      <nav className="navbar navbar-bottom" aria-label="Bottom Navigation" style={{
-        position: 'fixed',
-        bottom: 0,
-        left: 0,
-        width: '100vw',
-        background: 'linear-gradient(90deg, #ff512f 0%, #f9d423 100%)',
-        zIndex: 300,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: '0.5rem 0',
-        boxShadow: '0 -2px 16px rgba(255,81,47,0.12)',
-      }}>
-        <ul className="nav-links nav-links-bottom" style={{
-          display: 'flex',
-          gap: '2rem',
-          margin: 0,
-          padding: 0,
-          listStyle: 'none',
-        }}>
-          <li><NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''} end>Home</NavLink></li>
-          <li><NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink></li>
-          <li><NavLink to="/services" className={({ isActive }) => isActive ? 'active' : ''}>Services</NavLink></li>
-          <li><NavLink to="/gallery" className={({ isActive }) => isActive ? 'active' : ''}>Gallery</NavLink></li>
-          <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink></li>
-        </ul>
-      </nav>
+      {/* Bottom navigation links for mobile removed as per user request */}
     </Router>
   );
 }
