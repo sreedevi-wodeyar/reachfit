@@ -66,48 +66,29 @@ function Navbar() {
   }, []);
   useEffect(() => { setMenuOpen(false); }, [location]);
   return (
-    <nav className="navbar" style={{ minHeight: '48px', padding: '0.5rem 1rem', alignItems: 'center', background: 'linear-gradient(90deg, #ff512f 0%, #f9d423 100%)', width: '100vw', boxSizing: 'border-box', position: 'sticky', top: 0, zIndex: 1000 }}>
-      <NavLink to="/" className="logo" style={{ fontSize: '1.3rem', fontWeight: 700, letterSpacing: '1px', padding: 0, color: '#fff', lineHeight: 1, height: 'auto', marginRight: '0.5rem', textDecoration: 'none' }}>ReachFit</NavLink>
+    <nav className="navbar">
+      <NavLink to="/" className="logo">ReachFit</NavLink>
       <button
         className={`navbar-hamburger${menuOpen ? ' open' : ''}`}
         aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
         aria-expanded={menuOpen}
         aria-controls="navbar-menu"
         onClick={() => setMenuOpen(m => !m)}
-        style={{ background: 'transparent', border: 'none', outline: 'none', cursor: 'pointer', marginLeft: 'auto', zIndex: 1100 }}
       >
-        <span className="hamburger-bar" style={{ display: 'block', width: '28px', height: '4px', background: '#fff', margin: '5px 0', borderRadius: '2px', transition: 'all 0.3s' }} />
-        <span className="hamburger-bar" style={{ display: 'block', width: '28px', height: '4px', background: '#fff', margin: '5px 0', borderRadius: '2px', transition: 'all 0.3s' }} />
-        <span className="hamburger-bar" style={{ display: 'block', width: '28px', height: '4px', background: '#fff', margin: '5px 0', borderRadius: '2px', transition: 'all 0.3s' }} />
+        <span className="hamburger-bar" />
+        <span className="hamburger-bar" />
+        <span className="hamburger-bar" />
       </button>
       <ul
         className={`nav-links${menuOpen ? ' nav-open' : ''}`}
         id="navbar-menu"
-        style={{
-          gap: '1.2rem',
-          fontSize: '1rem',
-          alignItems: 'center',
-          margin: 0,
-          flexWrap: 'wrap',
-          listStyle: 'none',
-          display: menuOpen || window.innerWidth > 900 ? 'flex' : 'none',
-          position: window.innerWidth <= 900 ? 'absolute' : 'static',
-          top: '56px',
-          left: 0,
-          width: '100vw',
-          background: window.innerWidth <= 900 ? 'linear-gradient(90deg, #ff512f 0%, #f9d423 100%)' : 'transparent',
-          zIndex: 1050,
-          padding: window.innerWidth <= 900 ? '1.5rem 0' : 0,
-          boxShadow: window.innerWidth <= 900 ? '0 8px 24px rgba(0,0,0,0.08)' : 'none',
-          textAlign: 'center',
-        }}
       >
-        <li><NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''} end style={{ color: '#fff', fontWeight: 500, textDecoration: 'none', padding: '0.5rem 1rem', display: 'block' }}>Home</NavLink></li>
-        <li><NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''} style={{ color: '#fff', fontWeight: 500, textDecoration: 'none', padding: '0.5rem 1rem', display: 'block' }}>About</NavLink></li>
-        <li><NavLink to="/services" className={({ isActive }) => isActive ? 'active' : ''} style={{ color: '#fff', fontWeight: 500, textDecoration: 'none', padding: '0.5rem 1rem', display: 'block' }}>Services</NavLink></li>
-        <li><NavLink to="/gallery" className={({ isActive }) => isActive ? 'active' : ''} style={{ color: '#fff', fontWeight: 500, textDecoration: 'none', padding: '0.5rem 1rem', display: 'block' }}>Gallery</NavLink></li>
-        <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''} style={{ color: '#fff', fontWeight: 500, textDecoration: 'none', padding: '0.5rem 1rem', display: 'block' }}>Contact</NavLink></li>
-        <li><NavLink to="/feedback" className={({ isActive }) => isActive ? 'active' : ''} style={{ color: '#fff', fontWeight: 500, textDecoration: 'none', padding: '0.5rem 1rem', display: 'block' }}>Feedback</NavLink></li>
+        <li><NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''} end>Home</NavLink></li>
+        <li><NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink></li>
+        <li><NavLink to="/services" className={({ isActive }) => isActive ? 'active' : ''}>Services</NavLink></li>
+        <li><NavLink to="/gallery" className={({ isActive }) => isActive ? 'active' : ''}>Gallery</NavLink></li>
+        <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink></li>
+        <li><NavLink to="/feedback" className={({ isActive }) => isActive ? 'active' : ''}>Feedback</NavLink></li>
       </ul>
     </nav>
   );
