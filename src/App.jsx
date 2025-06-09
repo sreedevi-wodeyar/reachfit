@@ -6,6 +6,8 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
 import Feedback from './pages/Feedback';
+import Nutrition from './pages/Nutrition';
+import Diet from './pages/Diet';
 import './App.css';
 
 // Animated background shapes for all pages
@@ -58,6 +60,8 @@ function Navbar() {
           <NavLink to="/" end>Home</NavLink>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/services">Services</NavLink>
+          <NavLink to="/nutrition">Nutrition</NavLink>
+          <NavLink to="/diet">Diet</NavLink>
           <NavLink to="/gallery">Gallery</NavLink>
           <NavLink to="/contact">Contact</NavLink>
         </div>
@@ -77,6 +81,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/nutrition" element={<Nutrition />} />
+          <Route path="/diet" element={<Diet />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/feedback" element={<Feedback />} />

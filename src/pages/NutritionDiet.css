@@ -1,0 +1,164 @@
+/* Nutrition & Diet Pages Shared Styles - Updated to match ReachFit theme */
+html, body {
+  overflow-x: hidden !important;
+}
+
+.nutrition-main, .diet-main {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+  background: linear-gradient(120deg, #ff512f 0%, #f9d423 100%);
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 32px 0 rgba(255,81,47,0.10);
+  min-height: 100vh;
+  color: #fff;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+@media (min-width: 1280px) {
+  .nutrition-main, .diet-main {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (max-width: 900px) {
+  .nutrition-main, .diet-main {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    border-radius: 0.7rem;
+  }
+}
+@media (max-width: 600px) {
+  .nutrition-main, .diet-main {
+    max-width: 100vw;
+    padding: 0.7rem 0.2rem 1.2rem 0.2rem;
+    border-radius: 0.6rem;
+  }
+}
+.nutrition-hero, .diet-hero {
+  text-align: center;
+  margin-bottom: 2.2rem;
+}
+.nutrition-title, .diet-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(255,81,47,0.18);
+}
+.nutrition-subtitle, .diet-subtitle {
+  font-size: 1.25rem;
+  color: #fffbe6;
+  margin-bottom: 1.2rem;
+}
+.nutrition-sections, .diet-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.nutrition-section, .diet-section {
+  background: #fffbe6;
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px 0 rgba(255,81,47,0.10);
+  padding: 2rem 2.2rem 2rem 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #ff512f;
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+@media (max-width: 900px) {
+  .nutrition-section, .diet-section {
+    padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+    max-width: 98vw;
+    border-radius: 0.7rem;
+  }
+}
+@media (max-width: 600px) {
+  .nutrition-section, .diet-section {
+    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+    max-width: 100vw;
+    border-radius: 0.6rem;
+  }
+}
+.nutrition-features-grid, .diet-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-top: 0.7rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+@media (max-width: 700px) {
+  .nutrition-features-grid, .diet-types-grid {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+}
+.nutrition-success-stories, .diet-success-stories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 0.7rem;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+.nutrition-success-card, .diet-success-card {
+  background: #fff;
+  border-radius: 0.7rem;
+  box-shadow: 0 2px 12px 0 rgba(255,81,47,0.10);
+  padding: 1.1rem 1.2rem;
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 320px;
+  font-size: 1.08rem;
+  color: #ff512f;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+@media (max-width: 700px) {
+  .nutrition-success-card, .diet-success-card {
+    min-width: 0;
+    max-width: 100%;
+    font-size: 0.98rem;
+    align-items: flex-start;
+  }
+}
+.nutrition-cta, .diet-cta {
+  text-align: center;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+.nutrition-cta-btn, .diet-cta-btn {
+  background: linear-gradient(90deg, #ff512f 0%, #f9d423 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 0.8rem 2.2rem;
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 2px 8px 0 rgba(255,81,47,0.13);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.18s, transform 0.18s;
+  margin-top: 0.7rem;
+  display: inline-block;
+}
+.nutrition-cta-btn:hover, .diet-cta-btn:hover {
+  background: linear-gradient(90deg, #f9d423 0%, #ff512f 100%);
+  color: #fff;
+  transform: scale(1.04);
+}

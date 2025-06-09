@@ -73,13 +73,14 @@ App.css - Main stylesheet for ReachFit React website
   font-weight: 700;
   color: #fff;
   text-decoration: none;
+  margin-left: 0.7rem; /* Added left margin to move right */
   margin-right: 2rem;
   letter-spacing: 1px;
 }
 .rf-nav-links {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  gap: 1.3rem; /* Reduced gap for more links */
   align-items: center;
 }
 .rf-nav-links a {
@@ -110,10 +111,11 @@ App.css - Main stylesheet for ReachFit React website
   }
   .rf-logo {
     font-size: 1.1rem;
+    margin-left: 0.5rem; /* Also add left margin for mobile */
     margin-right: 1rem;
   }
   .rf-nav-links {
-    gap: 1.1rem;
+    gap: 0.7rem;
   }
   .rf-nav-links a {
     font-size: 0.98rem;
@@ -128,12 +130,12 @@ App.css - Main stylesheet for ReachFit React website
     padding: 0.2rem 0.1rem;
   }
   .rf-logo {
-    margin: 0.2rem 0 0.2rem 0.5rem;
+    margin: 0.2rem 0 0.2rem 0.7rem; /* Slightly more left margin for small screens */
     text-align: left;
   }
   .rf-nav-links {
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.4rem;
     justify-content: flex-start;
     padding-bottom: 0.2rem;
   }
@@ -1369,5 +1371,189 @@ button:hover, .btn:hover {
     padding-right: 0.5rem !important;
     box-sizing: border-box !important;
     align-items: center !important;
+  }
+}
+
+/* Chrome/Edge desktop only: fix navbar and home layout */
+@media screen and (min-width: 901px) {
+  @supports (-webkit-touch-callout: none) {
+    /* Navbar: force left alignment and remove all left padding/margin */
+    #root, body, html {
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+      box-sizing: border-box !important;
+    }
+    .rf-navbar {
+      left: 0 !important;
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+      width: 100vw !important;
+      max-width: 100vw !important;
+      border-radius: 0 !important;
+      box-sizing: border-box !important;
+    }
+    /* Home page: force horizontal layout for features and hero sections */
+    .features-section {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      align-items: stretch !important;
+      gap: 2rem !important;
+      width: 100vw !important;
+      max-width: 1280px !important;
+      margin: 0 auto 2.5rem auto !important;
+      box-sizing: border-box !important;
+    }
+    .features-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: 1.5rem !important;
+      justify-items: center !important;
+      align-items: stretch !important;
+      width: 100% !important;
+      max-width: 1280px !important;
+      margin: 2.5rem auto 2rem auto !important;
+      box-sizing: border-box !important;
+    }
+    /* Home scroller: center and fit width */
+    .home-scroller {
+      width: 100vw !important;
+      max-width: 1280px !important;
+      margin: 2rem auto 2.5rem auto !important;
+      padding: 0.5rem 0 !important;
+      border-radius: 2rem !important;
+      box-sizing: border-box !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      overflow-x: auto !important;
+    }
+    .scroller-track {
+      display: flex !important;
+      gap: 2.5rem !important;
+      align-items: center !important;
+      padding: 0.7rem 2rem !important;
+      min-width: max-content !important;
+      margin: 0 auto !important;
+      box-sizing: border-box !important;
+    }
+  }
+}
+
+/* --- Desktop/Laptop: Center and align all main sections, max-width 1280px, no horizontal scroll --- */
+@media screen and (min-width: 901px) {
+  #root, body, html {
+    max-width: 100vw !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+  .rf-navbar {
+    left: 0 !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    width: 100vw !important;
+    max-width: 1280px !important;
+    margin: 0 auto 0.7rem auto !important;
+    border-radius: 1.2rem !important;
+    box-sizing: border-box !important;
+  }
+  .page, main, .page.home, .page.home.fancy-home, .home-hero-bg {
+    max-width: 1280px !important;
+    margin: 0 auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+    width: 100%;
+  }
+  .features-section, .features-grid, .gallery-grid, .testimonials-list, .gallery-stats, .about-timeline-grid, .about-skills-grid, .about-facts-grid, .services-timeline-grid, .services-skills-grid, .services-facts-grid {
+    max-width: 1280px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
+    align-items: stretch !important;
+  }
+  .home-scroller {
+    max-width: 1280px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+}
+
+/* Desktop (Edge/Chrome) only: Center and align all main sections, prevent horizontal scroll */
+@media screen and (min-width: 901px) {
+  @supports (-webkit-touch-callout: none) {
+    /* Center all main page sections and prevent horizontal scroll */
+    .page,
+    .features-section,
+    .features-grid,
+    .gallery-grid,
+    .testimonials-section,
+    .contact-form,
+    .about-section,
+    .home-hero-bg,
+    .home-hero,
+    .home-hero-text,
+    .home-features,
+    .home-why,
+    .why-list,
+    .home-testimonials-section,
+    .home-convenience,
+    .home-banner,
+    .home-scroller {
+      max-width: 1280px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      overflow-x: hidden !important;
+    }
+    /* Remove 100vw on desktop to avoid scroll */
+    .features-section,
+    .features-grid,
+    .gallery-grid,
+    .home-scroller,
+    .home-hero-bg,
+    .home-hero {
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: 1280px !important;
+    }
+    html, body {
+      overflow-x: hidden !important;
+    }
+  }
+}
+
+/* --- Desktop/laptop only: Home feature cards in a row, aligned with other sections --- */
+@media screen and (min-width: 901px) {
+  .home-features.features-grid > .container {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1.5rem !important;
+    justify-items: center !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 1280px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+  .home-features .feature-card {
+    min-width: 0 !important;
+    max-width: 260px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
   }
 }
