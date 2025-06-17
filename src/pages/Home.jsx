@@ -105,12 +105,6 @@ function Home() {
         <div className="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-2xl border-4 border-purple-100">
           <ReactPlayer url={videoUrl} width="100%" height="100%" controls={true} />
         </div>
-        <p className="text-sm text-gray-500 mt-2 text-center">
-          <b>To change the video:</b> <br />
-          - For a local file, import it and set <code>videoUrl = trainerVideo</code>.<br />
-          - For YouTube, Facebook, or Instagram, set <code>videoUrl = 'https://...'</code>.<br />
-          <b>Supported:</b> Local MP4, YouTube, Facebook, Instagram links.
-        </p>
       </div>
 
       {/* Photo Gallery Section */}
