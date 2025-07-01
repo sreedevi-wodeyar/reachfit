@@ -158,7 +158,7 @@ function Contact() {
       </form>
       {/* Social links for quick contact */}
       <div className="contact-links stylish-links">
-        <a className="whatsapp" href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer">
+        <a className="whatsapp" href="https://wa.me/919243454366" target="_blank" rel="noopener noreferrer">
           <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" width="24" /> WhatsApp
         </a>
         <a className="instagram" href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">

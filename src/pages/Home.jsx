@@ -132,24 +132,6 @@ function Home() {
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-3 drop-shadow">Ready to Transform?</h2>
         <Link to="/contact" className="px-10 py-4 bg-white text-purple-700 font-bold rounded-xl shadow-lg hover:bg-purple-100 transition-all text-lg">Book a Free Consultation and Free Demo</Link>
       </div>
-      {/* Floating WhatsApp Icon */}
-      <a
-        href="https://wa.me/919243454366"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 rounded-full shadow-lg p-3 flex items-center justify-center transition-colors"
-        title="Chat with Trainer on WhatsApp"
-        style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.18)', textDecoration: 'none' }}
-        onClick={e => { e.stopPropagation(); }}
-      >
-        <img
-          src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
-          alt="WhatsApp"
-          width="32"
-          height="32"
-          style={{ filter: 'invert(1)' }}
-        />
-      </a>
     </section>
   );
 }
