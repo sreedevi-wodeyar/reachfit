@@ -7,6 +7,13 @@ function Contact() {
   const [status, setStatus] = useState('');
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
+  // Math captcha state
+  const [captcha, setCaptcha] = useState({ a: 0, b: 0, answer: '' });
+  const [captchaError, setCaptchaError] = useState('');
+
+  useEffect(() => {
+    setCaptcha({ a: Math.floor(Math.random() * 10) + 1, b: Math.floor(Math.random() * 10) + 1, answer: '' });
+  }, []);
 
   const validate = () => {
     const errs = {};
@@ -23,6 +30,13 @@ function Contact() {
     }
     if (!form.message.trim()) errs.message = 'Message is required';
     setErrors(errs);
+    // Captcha validation
+    if (parseInt(captcha.answer, 10) !== captcha.a + captcha.b) {
+      setCaptchaError('Incorrect answer to the anti-spam question.');
+      return false;
+    } else {
+      setCaptchaError('');
+    }
     return Object.keys(errs).length === 0;
   };
 
@@ -30,6 +44,8 @@ function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
     setErrors({ ...errors, [e.target.name]: undefined });
   };
+
+  const handleCaptchaChange = e => setCaptcha({ ...captcha, answer: e.target.value });
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -113,11 +129,32 @@ function Contact() {
           rows={5}
         />
         {errors.message && <div className="form-status" style={{ color: '#ff512f' }}>{errors.message}</div>}
+        {/* Simple math CAPTCHA anti-spam */}
+        <div className="captcha-group" style={{ margin: '1rem 0' }}>
+          <label htmlFor="captcha-answer" style={{ fontWeight: 500 }}>
+            Anti-spam: What is {captcha.a} + {captcha.b}?
+          </label>
+          <input
+            id="captcha-answer"
+            name="captcha-answer"
+            type="number"
+            placeholder="Enter answer"
+            value={captcha.answer}
+            onChange={handleCaptchaChange}
+            required
+            style={{ width: '120px', marginLeft: '1rem' }}
+          />
+          {captchaError && <div className="form-status" style={{ color: '#ff512f' }}>{captchaError}</div>}
+        </div>
         {/* Submit button */}
         <button type="submit" className="gradient-btn" disabled={loading}>
           {loading ? 'Sending...' : 'Send Message'}
         </button>
-        {status && <div className="form-status">{status}</div>}
+        {status && (
+          <div className="form-status" style={{ color: status.includes('error') ? '#ff512f' : '#22c55e', marginTop: '1rem', fontWeight: 500, textAlign: 'center', fontSize: '1.1em', background: '#f7f7fa', borderRadius: '0.5rem', padding: '0.75rem 1rem' }}>
+            {status}
+          </div>
+        )}
       </form>
       {/* Social links for quick contact */}
       <div className="contact-links stylish-links">

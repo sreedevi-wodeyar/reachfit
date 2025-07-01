@@ -139,7 +139,8 @@ function Home() {
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 rounded-full shadow-lg p-3 flex items-center justify-center transition-colors"
         title="Chat with Trainer on WhatsApp"
-        style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.18)' }}
+        style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.18)', textDecoration: 'none' }}
+        onClick={e => { e.stopPropagation(); }}
       >
         <img
           src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg"
